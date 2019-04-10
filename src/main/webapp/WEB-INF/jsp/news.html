@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Top News</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <style>
+            div {
+                margin-left: 20px
+            }
+            ul {
+                list-style-type: none;
+            }
+            input {
+                position: absolute;
+                left: 110px;
+            }
+            #button {
+                position: absolute;
+                left: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 15px;
+                margin-bottom:30px;
+            }
+            nav {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+            img {
+                max-height: 150px;
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a th:href="@{/news}">Home</a>
+            <a th:href="@{/news/all}">All News</a>
+            <a th:href="@{/news/categories}">Categories</a>
+            <a th:href="@{/news/trending}">Trending</a>
+        </nav>
+
+        <div>
+            <h1>Latest five:</h1>
+        </div>
+        <div>
+            <ul>
+                <li th:each="story : ${news}">
+                    <h2><a th:href="@{/news/{id}(id=${story.id})}" th:text="${story.heading}">title</a></h2>
+                    <h3 th:text="${story.lead}">lead</h3>
+                    <span th:inline="text">Date published:
+                        <span th:text="${story.localTime}">releaseTime</span><br/>
+                    </span>
+                    <img th:src="@{/news/{id}/content(id=${story.kuvaId})}"/><br/>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>Add a news story</h3>
+            Enter information and submit:<br/>
+            <form th:action="@{/news}" method="POST" enctype="multipart/form-data">
+                Heading: <input type="text" name="heading" id="heading"/><br/>
+                Lead: <input type="text" name="lead" id="lead"/><br/>
+                Story: <input type="text" name="story" id ="story"/><br/>
+                Authors: <input type="text" name="authors" id="authors"/><br/>
+                Categories: <input type="text" name="categories" id="categories"/><br/>
+                Image: <input type="file" name="file" id="file"/><br/>
+                <input id="button" type="submit" value="Add a news story"/>            
+            </form>
+        </div>
+    </body>
+</html>
