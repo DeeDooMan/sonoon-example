@@ -1,0 +1,118 @@
+/*------------------------------------*\ logicline
+ logicline GmbH
+\*------------------------------------*/
+/*------------------------------------*\ $IMPORTS
+\*------------------------------------*/
+/** Variables, resets, mixins, global assets like fonts */
+/*------------------------------------*\ $VARS
+\*------------------------------------*/
+/*------------------------------------*\ $RESET
+\*------------------------------------*/
+
+.instructions {
+	display: none;
+}
+
+.instructions li {
+	margin-bottom: 10px;
+}
+
+.instructions h2 {
+	margin: 18px 0;
+}
+
+.instructions blockquote {
+	margin-top: 10px;
+}
+
+.screenshot {
+	margin-top: 10px;
+	display: block;
+}
+
+.screenshot a {
+	padding: 0;
+	line-height: 1;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.screenshot img, .tool-choice img {
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.table td {
+	width: 50%;
+}
+
+.table.unstriped td {
+	border: none; 
+	padding-left: 0;
+	
+}
+.table.unstriped .btn {
+	margin-top: 25px;
+}
+
+html, body, #MainContainer
+{
+    min-height: 100%; /*Sets the min height to the height of the viewport.*/
+    /* height: 100%; Effectively, this is min height for IE5+/Win, since IE wrongly expands an element to enclose its content.  This mis-behavior screws up modern browsers*/
+    margin: 0;
+    padding: 0;
+}
+
+html > body #MainContainer
+{
+    height: auto; /*this undoes the IE hack, hiding it from IE using the child selector*/
+}
+
+.row {
+	margin-left: 0 !important;
+}
+
+#MainContainer
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#Fullpage
+{
+    height: auto;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding-top: 100px;
+    overflow: hidden;
+}
+#Footer
+{
+    clear: both;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    border-top: 3px solid #e10707;
+    text-align: center;
+    height: 50px;
+}
+#Header
+{
+	border-top: 3px solid #e10707;
+	position: fixed;
+	width: 100%;
+}
+
+#Header img {
+	padding: 20px;
+}

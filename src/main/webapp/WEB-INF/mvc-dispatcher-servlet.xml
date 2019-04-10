@@ -1,0 +1,27 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+
+
+
+
+                           http://www.springframework.org/schema/mvc 
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+    <!-- wo liegen unsere Statischen Elemente der GUI -->
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+
+    <!-- wird verwendet wenn ein Controller eine "PageRef" zurückgibt um daraus den vollständigen 
+         Namen einer JSP zu machen -->
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+   
+</beans>
