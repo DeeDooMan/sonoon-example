@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "description": "",
+  "repository": "https://github.com/logiclinegmbh/swapp",
+  "logo": "http://www.logicline.de/wordpress/wp-content/uploads/2015/01/logicline_logo_400.png",
+  "website": "https://github.com/logiclinegmbh/swapp",
+  "keywords": ["java", "heroku", "spring","swapp","logicline","button"],
+  "addons": ["heroku-postgresql:hobby-dev"]
+}
